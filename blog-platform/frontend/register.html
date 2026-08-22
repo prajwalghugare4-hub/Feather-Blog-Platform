@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register - Feather</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#c0edd0",
+                        "on-background": "#1a1c1a",
+                        "secondary-fixed-dim": "#95d4b3",
+                        "background": "#faf9f6",
+                        "on-tertiary-fixed-variant": "#264f39",
+                        "primary-fixed": "#e5e2e1",
+                        "tertiary": "#000000",
+                        "surface-container-highest": "#e3e2df",
+                        "primary-container": "#1c1b1b",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#000000",
+                        "inverse-primary": "#c8c6c5",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#858383",
+                        "outline-variant": "#c4c7c7",
+                        "surface-bright": "#faf9f6",
+                        "on-surface": "#1a1c1a",
+                        "inverse-on-surface": "#f2f1ee",
+                        "secondary-fixed": "#b1f0ce",
+                        "secondary": "#2c694e",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-variant": "#e3e2df",
+                        "on-primary-fixed-variant": "#474746",
+                        "surface-container": "#efeeeb",
+                        "on-secondary-fixed": "#002114",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#316e52",
+                        "on-surface-variant": "#444748",
+                        "secondary-container": "#aeeecb",
+                        "outline": "#747878",
+                        "surface-tint": "#5f5e5e",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#a4d1b4",
+                        "tertiary-container": "#002112",
+                        "on-secondary-fixed-variant": "#0e5138",
+                        "surface-dim": "#dbdad7",
+                        "surface-container-low": "#f4f3f0",
+                        "on-tertiary-container": "#638d74",
+                        "surface-container-high": "#e9e8e5",
+                        "inverse-surface": "#2f312f",
+                        "surface": "#faf9f6",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#002112",
+                        "on-primary-fixed": "#1c1b1b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "article-max": "720px",
+                        "base": "8px",
+                        "container-max": "1120px",
+                        "xl": "80px",
+                        "lg": "48px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "sm": "12px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .custom-input:focus {
+            border-color: #2D6A4F;
+            box-shadow: 0 0 0 1px #2D6A4F;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex antialiased">
+<!-- Split Screen Layout -->
+<div class="flex flex-col md:flex-row w-full flex-1">
+<!-- Left Side: Brand/Illustration (Hidden on Mobile) -->
+<div class="hidden md:flex flex-col flex-1 bg-surface-container-low border-r border-outline-variant/30 p-12 relative overflow-hidden justify-between">
+<div class="z-10 relative">
+<a class="font-display-lg text-display-lg text-primary tracking-tight" href="#">Feather</a>
+</div>
+<div class="z-10 relative max-w-md mt-auto mb-12">
+<blockquote class="font-headline-md text-headline-md text-on-surface mb-6">
+                    "A space for quiet thoughts in a loud world."
+                </blockquote>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Join a community of readers and writers who value editorial minimalism and thoughtful long-form content.
+                </p>
+</div>
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full opacity-40" data-alt="A serene, minimalist flat lay of a vintage typewriter on a clean off-white desk next to a delicate fern leaf. Soft, natural morning light creates gentle shadows. The scene embodies a quiet, focused atmosphere for writing. The color palette is restricted to calm whites, subtle grays, and a touch of organic green, perfectly matching a refined editorial digital aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBoowIntUdnXKmwcHEqUNCMXgqRWw_GFeFcCXTcobItd18ptX2GTmJXtZJ5b2gfYxNoA2cSu3HdhVoc2y5-0kTOhbtLfKPf8Hcys_NkCcKk1WMoo6kVeU3LZVc3pJ3cd81TLO7kaDl4rad42tBwfBQdCdUELBAEghI89qHlDJXkUUOHPLmuEkgEQEtiFMvYFPmVeo3m7xCSW3kiNMqAKWLAJ3QT4U-1_RgJFUrSFym16FHZBEZ30pY2')"></div>
+<!-- Gradient Overlay for readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/80 to-transparent"></div>
+</div>
+</div>
+<!-- Right Side: Registration Form -->
+<div class="flex-1 flex flex-col justify-center px-6 py-12 md:px-12 lg:px-24 bg-surface max-w-2xl mx-auto w-full relative z-10">
+<!-- Mobile Brand Header (Visible only on mobile) -->
+<div class="md:hidden text-center mb-10">
+<a class="font-display-lg-mobile text-display-lg-mobile text-primary tracking-tight" href="#">Feather</a>
+</div>
+<div class="mb-10 text-center md:text-left">
+<h1 class="font-headline-md text-headline-md text-primary mb-2">Create an account</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Join Feather to start writing and exploring.</p>
+</div>
+<form action="http://localhost:8080/api/auth/register" class="space-y-6" id="registerForm" method="POST">
+<!-- Full Name -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="fullName">Full Name</label>
+<input class="custom-input block w-full rounded-lg border border-outline-variant bg-surface-container-lowest px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 transition-colors focus:outline-none" id="fullName" name="fullName" placeholder="Jane Doe" required="" type="text"/>
+</div>
+<!-- Username -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="username">Username</label>
+<input class="custom-input block w-full rounded-lg border border-outline-variant bg-surface-container-lowest px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 transition-colors focus:outline-none" id="username" name="username" placeholder="janedoe" required="" type="text"/>
+</div>
+<!-- Email -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="email">Email Address</label>
+<input class="custom-input block w-full rounded-lg border border-outline-variant bg-surface-container-lowest px-4 py-3 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 transition-colors focus:outline-none" id="email" name="email" placeholder="jane@example.com" required="" type="email"/>
+</div>
+<!-- Password -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="password">Password</label>
+<div class="relative">
+<input class="custom-input block w-full rounded-lg border border-outline-variant bg-surface-container-lowest px-4 py-3 pr-10 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 transition-colors focus:outline-none" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button class="absolute inset-y-0 right-0 flex items-center pr-3 text-on-surface-variant hover:text-primary" onclick="togglePassword('password', 'pwdIcon1')" type="button">
+<span class="material-symbols-outlined text-[20px]" id="pwdIcon1">visibility</span>
+</button>
+</div>
+</div>
+<!-- Confirm Password -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="confirmPassword">Confirm Password</label>
+<div class="relative">
+<input class="custom-input block w-full rounded-lg border border-outline-variant bg-surface-container-lowest px-4 py-3 pr-10 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 transition-colors focus:outline-none" id="confirmPassword" name="confirmPassword" placeholder="••••••••" required="" type="password"/>
+<button class="absolute inset-y-0 right-0 flex items-center pr-3 text-on-surface-variant hover:text-primary" onclick="togglePassword('confirmPassword', 'pwdIcon2')" type="button">
+<span class="material-symbols-outlined text-[20px]" id="pwdIcon2">visibility</span>
+</button>
+</div>
+</div>
+<!-- Error Message Container (Hidden by default) -->
+<div class="hidden rounded-lg bg-error-container/20 border border-error/30 p-4" id="errorMessage">
+<p class="font-body-md text-body-md text-error flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">error</span>
+<span id="errorText">Registration failed. Please try again.</span>
+</p>
+</div>
+<!-- Submit Button -->
+<button class="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg text-on-primary bg-[#2D6A4F] hover:bg-[#22523d] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2D6A4F] font-label-md text-label-md transition-all duration-200 shadow-sm hover:shadow-md" type="submit">
+                    Register
+                </button>
+</form>
+<div class="mt-8 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Already have an account? 
+                    <a class="font-medium text-[#2D6A4F] hover:underline decoration-[#2D6A4F]/30 underline-offset-4 transition-all" href="#">Login</a>
+</p>
+</div>
+<div class="mt-auto pt-12 text-center md:text-left text-on-surface-variant/60">
+<p class="font-label-sm text-label-sm">By registering, you agree to our Terms and Privacy Policy.</p>
+</div>
+</div>
+</div>
+<script>
+        // Password Visibility Toggle
+        function togglePassword(inputId, iconId) {
+            const input = document.getElementById(inputId);
+            const icon = document.getElementById(iconId);
+            
+            if (input.type === "password") {
+                input.type = "text";
+                icon.textContent = "visibility_off";
+            } else {
+                input.type = "password";
+                icon.textContent = "visibility";
+            }
+        }
+
+        // Basic Form Validation & Mock Submit Handling for visual feedback
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            const pwd = document.getElementById('password').value;
+            const confirmPwd = document.getElementById('confirmPassword').value;
+            const errorContainer = document.getElementById('errorMessage');
+            const errorText = document.getElementById('errorText');
+
+            if (pwd !== confirmPwd) {
+                e.preventDefault();
+                errorText.textContent = "Passwords do not match.";
+                errorContainer.classList.remove('hidden');
+                return;
+            }
+            
+            errorContainer.classList.add('hidden');
+            // Form continues to POST to specified API
+        });
+    </script>
+</body></html>

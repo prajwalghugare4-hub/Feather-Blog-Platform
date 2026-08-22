@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login - Feather</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#c0edd0",
+                        "on-background": "#1a1c1a",
+                        "secondary-fixed-dim": "#95d4b3",
+                        "background": "#faf9f6",
+                        "on-tertiary-fixed-variant": "#264f39",
+                        "primary-fixed": "#e5e2e1",
+                        "tertiary": "#000000",
+                        "surface-container-highest": "#e3e2df",
+                        "primary-container": "#1c1b1b",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#000000",
+                        "inverse-primary": "#c8c6c5",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#858383",
+                        "outline-variant": "#c4c7c7",
+                        "surface-bright": "#faf9f6",
+                        "on-surface": "#1a1c1a",
+                        "inverse-on-surface": "#f2f1ee",
+                        "secondary-fixed": "#b1f0ce",
+                        "secondary": "#2c694e",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-variant": "#e3e2df",
+                        "on-primary-fixed-variant": "#474746",
+                        "surface-container": "#efeeeb",
+                        "on-secondary-fixed": "#002114",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#316e52",
+                        "on-surface-variant": "#444748",
+                        "secondary-container": "#aeeecb",
+                        "outline": "#747878",
+                        "surface-tint": "#5f5e5e",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#a4d1b4",
+                        "tertiary-container": "#002112",
+                        "on-secondary-fixed-variant": "#0e5138",
+                        "surface-dim": "#dbdad7",
+                        "surface-container-low": "#f4f3f0",
+                        "on-tertiary-container": "#638d74",
+                        "surface-container-high": "#e9e8e5",
+                        "inverse-surface": "#2f312f",
+                        "surface": "#faf9f6",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#002112",
+                        "on-primary-fixed": "#1c1b1b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "article-max": "720px",
+                        "base": "8px",
+                        "container-max": "1120px",
+                        "xl": "80px",
+                        "lg": "48px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "sm": "12px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex items-center justify-center font-body-md antialiased overflow-hidden selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<main class="w-full h-screen grid grid-cols-1 lg:grid-cols-2 relative">
+<!-- Left Section: Branding & Image -->
+<section class="hidden lg:flex flex-col justify-between p-lg relative overflow-hidden bg-surface-container-low">
+<div class="z-10 relative">
+<a class="inline-flex items-center gap-2 group text-primary hover:opacity-80 transition-opacity" href="/">
+<span class="material-symbols-outlined text-[32px] group-hover:rotate-12 transition-transform duration-300">ink_pen</span>
+<span class="font-display-lg text-headline-sm tracking-tight">Feather</span>
+</a>
+</div>
+<div class="z-10 relative max-w-md mt-auto mb-xl">
+<blockquote class="font-headline-md text-headline-md text-primary mb-md">
+                    "Writing is nature's way of letting you know how sloppy your thinking is."
+                </blockquote>
+<p class="font-body-md text-body-md text-on-surface-variant">— Richard Guindon</p>
+</div>
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<img alt="Feather branding image" class="w-full h-full object-cover opacity-60 mix-blend-multiply" data-alt="A serene, high-quality photograph of a vintage typewriter resting on a wooden desk near a window, bathed in soft, natural morning light. The scene embodies a clean, minimalist editorial aesthetic with a very subtle green tint to match the Feather brand. The lighting is ethereal and calm, evoking focus and creativity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8HU7PVWQtexutnyx5WF7UF3n7yl_XYstljnxDkg0uI_GYH2G-ZkS2nPt7_Q_7lj1_jTfvJHR-RTwLW6-pRw6JUXB70NX4D2ylysXnWOGSOlT-oHJ-aJ4IpCMePMh1dOXGMcH3rzE2wOqZEm2iumSKfpHqDSPEf-fx4TgWHadn-s-Fbu5w2w7u88Do_NgJdj5BZ_8BpXOksMMB4gRCoOlR6u3r_y9lCvCw-ciuI7ldCoOWySSg7dHo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
+</div>
+</section>
+<!-- Right Section: Login Form -->
+<section class="flex flex-col justify-center px-6 py-12 lg:px-24 bg-surface relative z-10 w-full max-w-lg mx-auto lg:max-w-none">
+<!-- Mobile Logo -->
+<div class="lg:hidden mb-12 flex justify-center w-full">
+<a class="inline-flex items-center gap-2 text-primary" href="/">
+<span class="material-symbols-outlined text-[28px]">ink_pen</span>
+<span class="font-display-lg-mobile text-headline-sm tracking-tight">Feather</span>
+</a>
+</div>
+<div class="w-full max-w-[400px] mx-auto">
+<div class="mb-10">
+<h1 class="font-headline-md text-headline-md text-primary mb-2">Welcome back</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Log in to continue writing your story.</p>
+</div>
+<form action="http://localhost:8080/api/auth/login" class="space-y-6" id="loginForm" method="POST">
+<!-- Email -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="email">Email address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-opacity-70">mail</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all duration-200" id="email" name="email" placeholder="writer@feather.com" required="" type="email"/>
+</div>
+</div>
+<!-- Password -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<label class="block font-label-md text-label-md text-on-surface" for="password">Password</label>
+<a class="font-label-md text-label-md text-secondary hover:underline underline-offset-4" href="#">Forgot password?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-opacity-70">lock</span>
+<input class="w-full pl-10 pr-10 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all duration-200" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button aria-label="Toggle password visibility" class="absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors focus:outline-none" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- Remember Me -->
+<div class="flex items-center">
+<input class="h-4 w-4 rounded border-outline-variant text-secondary focus:ring-secondary bg-surface-container-lowest cursor-pointer transition-colors duration-200" id="remember-me" name="remember-me" type="checkbox"/>
+<label class="ml-2 block font-body-md text-body-md text-on-surface-variant cursor-pointer" for="remember-me">
+                            Remember me
+                        </label>
+</div>
+<!-- Submit Button -->
+<button class="w-full py-3 px-4 bg-secondary text-on-secondary rounded-lg font-label-md text-label-md hover:bg-secondary/90 hover:shadow-[0_4px_20px_rgba(44,105,78,0.2)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary transition-all duration-200 flex items-center justify-center gap-2 group" type="submit">
+                        Sign In
+                        <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</form>
+<!-- Divider -->
+<div class="mt-8 mb-6 relative">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant/50"></div>
+</div>
+<div class="relative flex justify-center">
+<span class="bg-surface px-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Or continue with</span>
+</div>
+</div>
+<!-- Google OAuth -->
+<button class="w-full flex items-center justify-center gap-3 py-3 px-4 bg-surface-container-lowest border border-outline-variant text-on-surface rounded-lg font-label-md text-label-md hover:bg-surface-container-low focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-200" type="button">
+<svg class="h-5 w-5" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+                    Google
+                </button>
+<!-- Register Link -->
+<p class="mt-8 text-center font-body-md text-body-md text-on-surface-variant">
+                    Don't have an account? 
+                    <a class="font-label-md text-label-md text-primary hover:text-secondary underline-offset-4 hover:underline transition-colors" href="#">Register</a>
+</p>
+</div>
+</section>
+</main>
+<script>
+        // Simple client-side validation feedback before submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            const btn = this.querySelector('button[type="submit"]');
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Signing In...';
+            btn.classList.add('opacity-80', 'cursor-not-allowed');
+            // Form continues to submit normally to localhost:8080/api/auth/login
+        });
+    </script>
+</body></html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile | Feather</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed": "#c0edd0",
+                      "on-background": "#1a1c1a",
+                      "secondary-fixed-dim": "#95d4b3",
+                      "background": "#faf9f6",
+                      "on-tertiary-fixed-variant": "#264f39",
+                      "primary-fixed": "#e5e2e1",
+                      "tertiary": "#000000",
+                      "surface-container-highest": "#e3e2df",
+                      "primary-container": "#1c1b1b",
+                      "on-tertiary": "#ffffff",
+                      "primary": "#000000",
+                      "inverse-primary": "#c8c6c5",
+                      "on-error": "#ffffff",
+                      "on-primary-container": "#858383",
+                      "outline-variant": "#c4c7c7",
+                      "surface-bright": "#faf9f6",
+                      "on-surface": "#1a1c1a",
+                      "inverse-on-surface": "#f2f1ee",
+                      "secondary-fixed": "#b1f0ce",
+                      "secondary": "#2c694e",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "surface-variant": "#e3e2df",
+                      "on-primary-fixed-variant": "#474746",
+                      "surface-container": "#efeeeb",
+                      "on-secondary-fixed": "#002114",
+                      "error": "#ba1a1a",
+                      "on-secondary-container": "#316e52",
+                      "on-surface-variant": "#444748",
+                      "secondary-container": "#aeeecb",
+                      "outline": "#747878",
+                      "surface-tint": "#5f5e5e",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed-dim": "#a4d1b4",
+                      "tertiary-container": "#002112",
+                      "on-secondary-fixed-variant": "#0e5138",
+                      "surface-dim": "#dbdad7",
+                      "surface-container-low": "#f4f3f0",
+                      "on-tertiary-container": "#638d74",
+                      "surface-container-high": "#e9e8e5",
+                      "inverse-surface": "#2f312f",
+                      "surface": "#faf9f6",
+                      "on-error-container": "#93000a",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed": "#002112",
+                      "on-primary-fixed": "#1c1b1b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "article-max": "720px",
+                      "base": "8px",
+                      "container-max": "1120px",
+                      "xl": "80px",
+                      "lg": "48px",
+                      "md": "24px",
+                      "xs": "4px",
+                      "sm": "12px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "headline-sm": [
+                              "Playfair Display"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.7",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+          font-family: 'Material Symbols Outlined';
+          font-weight: normal;
+          font-style: normal;
+          font-size: 24px;
+          line-height: 1;
+          letter-spacing: normal;
+          text-transform: none;
+          display: inline-block;
+          white-space: nowrap;
+          word-wrap: normal;
+          direction: ltr;
+          -webkit-font-feature-settings: 'liga';
+          -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-container-low/90 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline/20">
+<div class="flex justify-between items-center h-16 px-6 md:px-12 max-w-container-max mx-auto">
+<a class="font-display-lg text-display-lg text-primary dark:text-inverse-primary tracking-tight" href="/">Feather</a>
+<div class="hidden md:flex gap-8">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors hover:bg-surface-container-high dark:hover:bg-inverse-surface rounded-lg px-3 py-2 transition-all duration-200" href="/home">Home</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors hover:bg-surface-container-high dark:hover:bg-inverse-surface rounded-lg px-3 py-2 transition-all duration-200" href="/explore">Explore</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors hover:bg-surface-container-high dark:hover:bg-inverse-surface rounded-lg px-3 py-2 transition-all duration-200" href="/write">Write</a>
+</div>
+<div class="flex gap-4 items-center">
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors px-4 py-2 rounded-lg border border-outline-variant hover:border-primary">Login</button>
+<button class="font-label-md text-label-md bg-secondary text-on-secondary px-4 py-2 rounded-lg hover:bg-on-secondary-container transition-colors">Register</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[80px]">
+<!-- Profile Header section -->
+<section class="max-w-container-max mx-auto px-6 md:px-12 pt-lg pb-lg">
+<!-- Cover Banner -->
+<div class="relative w-full h-[240px] md:h-[320px] rounded-xl overflow-hidden mb-[-64px]">
+<div class="bg-cover bg-center w-full h-full" data-alt="A tranquil, minimalist forest landscape at dawn, shot with high-key lighting. Soft mist rolls through tall pine trees. The color palette features deep forest greens (#2D6A4F) and soft, off-white mist against a pale, breathable sky. The mood is calm, focused, and elegant, perfect for an editorial brand aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCGJsldAIr4rfsX7_krq_77k86gZlWLgOIuXrC_uqLX1ztR4frL6T_NSVRqQyeHAKwqXPt-VYF6COHOsFczcIJ-ZFEHEmZu007D2PM9oqd9Lc-lYhrf_C-VlhhNcCfkchZEuHbBDoHybMEFQFwMfElsrTgYPKM8SVk2WJOomIEflld6F_--rHLAUg8QiNxKp_FwfTdqJVuAtFI77bkT3AvgpEaN0j3IFhBLHBa7CbvLWmsw2oppf_ib')"></div>
+</div>
+<!-- Profile Info Card -->
+<div class="relative bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 p-8 pt-0 mt-8 mx-4 md:mx-12 flex flex-col md:flex-row items-center md:items-start gap-8 z-10">
+<!-- Avatar overlapping banner -->
+<div class="relative -mt-16 w-32 h-32 rounded-full border-4 border-surface-container-lowest overflow-hidden shadow-sm flex-shrink-0 bg-surface-container-high">
+<img class="object-cover w-full h-full" data-alt="A professional headshot of a writer or journalist, shot against a clean, off-white studio background. The subject is looking thoughtfully off-camera, wearing minimalist, timeless clothing in muted earth tones. The lighting is soft and flattering, creating a sophisticated and trustworthy editorial mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiY41NQ_lXTR44JtAwBNJoynKK64uPrUqTL8jMSwMY84_AhktomiKDIxr_hiSWoU6_AXnt-ihf-hrb9-9_56bDzUbSiS0VvOT69ocHL5BnDp1hvu7Ti86kH-rruqBimqPF8CHsKfV-gXEbiDgtN1vODerJoPifxFxRtzqY9gDM3k9ywjxwEj4trkdnoGqLUuAZoOLkBf2_COfj4ZXoQTTjlYwjegHhqr0zoVbWokdpXODLhSmuVdO5"/>
+</div>
+<!-- Text Info -->
+<div class="flex-grow pt-4 md:pt-8 text-center md:text-left">
+<h1 class="font-headline-md text-headline-md text-primary mb-1">Eleanor Vance</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">@evance_writes</p>
+<p class="font-body-lg text-body-lg text-on-surface max-w-2xl mb-6">Exploring the intersection of modern minimalist design and traditional storytelling. Believer in generous negative space and the power of a well-placed serif.</p>
+<div class="flex gap-6 justify-center md:justify-start font-label-md text-label-md text-on-surface-variant">
+<span><strong class="text-primary font-headline-sm text-headline-sm">1.2k</strong> Followers</span>
+<span><strong class="text-primary font-headline-sm text-headline-sm">340</strong> Following</span>
+</div>
+</div>
+<!-- Action -->
+<div class="pt-4 md:pt-8">
+<button class="bg-secondary text-on-secondary font-label-md text-label-md px-6 py-3 rounded-lg hover:bg-on-secondary-container transition-colors shadow-sm">Follow</button>
+</div>
+</div>
+</section>
+<!-- Tab Bar -->
+<section class="max-w-container-max mx-auto px-6 md:px-12 border-b border-outline-variant/30 mb-lg">
+<div class="flex gap-8">
+<button class="pb-4 font-label-md text-label-md text-secondary border-b-2 border-secondary font-semibold">Posts</button>
+<button class="pb-4 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Liked</button>
+<button class="pb-4 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">About</button>
+</div>
+</section>
+<!-- Grid of Posts (Bento/Card Layout) -->
+<section class="max-w-container-max mx-auto px-6 md:px-12 pb-xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant/20 overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col h-full">
+<div class="h-48 w-full overflow-hidden">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist architectural interior featuring dramatic light and shadow. A single beam of sunlight crosses a pristine white wall, highlighting a simple wooden chair. The image embodies editorial minimalism, utilizing expansive negative space and a clean, neutral color palette to create a serene, thoughtful atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAWuS03-LWpVIabZIljVuWC8M8x7qbYGAKf-cdywLM77gN9x5XpqnM2zvabpyKREnVMqgLkTE4u346pBkSLptTjXN2tCw-b6Q-6XDnJZ4F37HnI50uPBAKZOt1hKvOkXHZan4eGafaBk8Fbgs1iWJCsVWzlUGf-uhXYqGx9oWVNUQAlQ920k7vbyBgKbv3X09ZSLixhOYeK4khqEn2KAjFcMdTQ7M-zhGfcFDCLMX5fpBu1MQpWQyAM')"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-4">
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-3 py-1 rounded-full">Design</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Oct 24</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-3 leading-tight group-hover:text-secondary transition-colors">The Weight of Whitespace in Modern Interfaces</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-6 flex-grow">Why generous negative space isn't just about aesthetics—it's a critical tool for reducing cognitive load and improving reading comprehension in digital environments.</p>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined" data-icon="favorite" style="font-size: 16px;">favorite</span> 243
+                        <span class="material-symbols-outlined ml-4" data-icon="chat_bubble" style="font-size: 16px;">chat_bubble</span> 18
+                    </div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant/20 overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col h-full">
+<div class="h-48 w-full overflow-hidden">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A close-up shot of an antique mechanical typewriter's keys, softly illuminated by natural window light. The focus is sharp on a few letters, with a creamy, shallow depth of field blurring the background. The mood is nostalgic yet sophisticated, utilizing a monochromatic palette with subtle warm tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmFHW8r4rRRRu3Eh6GfUECTbhnF77xhuiEm6rBGcij_0MwHqQN_Rz0grJln0pMQh7rI97XHIyYpXDlL6EIEbfUpifUbJKytehPo3BqIn0sqOJ6JiVdUUbGoGXvoS69_nJLD8p_4Up8v-DkALtFRYei9pOYg1bWCa34BQGn5qlOrJCHDXpoobo2iupdMlNpaFHiBGvVdSnIdW_Nsl1Q1vFVsptOl4o1CnUmeXj-QDTYR29SDhttf4Et')"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-4">
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-3 py-1 rounded-full">Writing</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Oct 12</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-3 leading-tight group-hover:text-secondary transition-colors">Finding Your Editorial Voice</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-6 flex-grow">Balancing personal flair with objective clarity. A guide to writing that engages the reader without overwhelming the narrative.</p>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined" data-icon="favorite" style="font-size: 16px;">favorite</span> 189
+                        <span class="material-symbols-outlined ml-4" data-icon="chat_bubble" style="font-size: 16px;">chat_bubble</span> 22
+                    </div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant/20 overflow-hidden shadow-sm hover:shadow-md transition-shadow group flex flex-col h-full">
+<div class="h-48 w-full overflow-hidden">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A beautifully bound journal resting on a smooth, light oak desk, next to a ceramic cup of black coffee and a sleek fountain pen. Shot overhead with diffused, even lighting typical of modern editorial photography. The aesthetic is clean, ordered, and emphasizes quality materials and calm focus." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBDPCLMloM4xWu9k7QfRR7-umBz_SFUsdlQufMoXqeqncvGemfr41pro0WQ2aZUrTUbUdjBEuNeX1F6KoiWm9ourm8LqU6xsM43RAT9oiFIvqhzqCOYxSVZl-s7cRVJsQYaxoLticGTkohcwMM2NJq9Dm0V1amO_HNPAwDsdePvV4jaCshYgx2zLEzxCvQuIxZCjg3DDjVzcGbwPLqRJhJeBGrRAwIpq1FLHsmiXqwUXm_y_enO88eO')"></div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-4">
+<span class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-3 py-1 rounded-full">Productivity</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sep 28</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-3 leading-tight group-hover:text-secondary transition-colors">The Ritual of Morning Pages</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-6 flex-grow">How clearing mental clutter first thing in the morning can pave the way for a day of focused, uninterrupted creative work.</p>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined" data-icon="favorite" style="font-size: 16px;">favorite</span> 312
+                        <span class="material-symbols-outlined ml-4" data-icon="chat_bubble" style="font-size: 16px;">chat_bubble</span> 45
+                    </div>
+</div>
+</article>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-highest w-full py-16 border-t border-outline-variant/50">
+<div class="max-w-container-max mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<a class="font-display-lg text-headline-sm text-primary dark:text-inverse-primary tracking-tight block mb-4" href="/">Feather</a>
+<p class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md">© 2024 Feather. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap gap-6 md:justify-end items-center font-label-sm text-label-sm">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors hover:underline decoration-secondary/30 underline-offset-4" href="/about">About</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors hover:underline decoration-secondary/30 underline-offset-4" href="/privacy">Privacy</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors hover:underline decoration-secondary/30 underline-offset-4" href="/terms">Terms</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors hover:underline decoration-secondary/30 underline-offset-4" href="/contact">Contact</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors hover:underline decoration-secondary/30 underline-offset-4" href="/archive">Archive</a>
+</div>
+</div>
+</footer>
+</body></html>

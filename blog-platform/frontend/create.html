@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog Post - Feather</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#c0edd0",
+                        "on-background": "#1a1c1a",
+                        "secondary-fixed-dim": "#95d4b3",
+                        "background": "#faf9f6",
+                        "on-tertiary-fixed-variant": "#264f39",
+                        "primary-fixed": "#e5e2e1",
+                        "tertiary": "#000000",
+                        "surface-container-highest": "#e3e2df",
+                        "primary-container": "#1c1b1b",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#000000",
+                        "inverse-primary": "#c8c6c5",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#858383",
+                        "outline-variant": "#c4c7c7",
+                        "surface-bright": "#faf9f6",
+                        "on-surface": "#1a1c1a",
+                        "inverse-on-surface": "#f2f1ee",
+                        "secondary-fixed": "#b1f0ce",
+                        "secondary": "#2c694e",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "surface-variant": "#e3e2df",
+                        "on-primary-fixed-variant": "#474746",
+                        "surface-container": "#efeeeb",
+                        "on-secondary-fixed": "#002114",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#316e52",
+                        "on-surface-variant": "#444748",
+                        "secondary-container": "#aeeecb",
+                        "outline": "#747878",
+                        "surface-tint": "#5f5e5e",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#a4d1b4",
+                        "tertiary-container": "#002112",
+                        "on-secondary-fixed-variant": "#0e5138",
+                        "surface-dim": "#dbdad7",
+                        "surface-container-low": "#f4f3f0",
+                        "on-tertiary-container": "#638d74",
+                        "surface-container-high": "#e9e8e5",
+                        "inverse-surface": "#2f312f",
+                        "surface": "#faf9f6",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#002112",
+                        "on-primary-fixed": "#1c1b1b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "article-max": "720px",
+                        "base": "8px",
+                        "container-max": "1120px",
+                        "xl": "80px",
+                        "lg": "48px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "sm": "12px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            background-color: theme('colors.secondary');
+            width: 0%;
+            z-index: 100;
+            transition: width 0.1s ease-out;
+        }
+        .heart-icon {
+            transition: color 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .heart-icon.liked {
+            color: theme('colors.error');
+            font-variation-settings: 'FILL' 1;
+            transform: scale(1.2);
+        }
+        /* Prose Styles */
+        .prose p { margin-bottom: 1.5rem; }
+        .prose h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; margin-top: 2.5rem; margin-bottom: 1rem; color: theme('colors.primary'); }
+        .prose h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; color: theme('colors.primary'); }
+        .prose a { color: theme('colors.secondary'); text-decoration: underline; text-underline-offset: 4px; }
+        .prose blockquote { border-left: 4px solid theme('colors.secondary'); padding-left: 1rem; font-style: italic; color: theme('colors.on-surface-variant'); margin-block: 2rem; }
+        .prose code { background-color: theme('colors.surface-container'); padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; font-size: 0.9em; }
+        .prose img { border-radius: theme('borderRadius.lg'); margin-block: 2rem; width: 100%; box-shadow: 0 4px 20px rgba(26,26,26,0.05); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<div class="reading-progress" id="progress-bar"></div>
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-container-low/90 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline/20">
+<div class="flex justify-between items-center h-16 px-6 md:px-12 max-w-container-max mx-auto">
+<a class="font-display-lg text-display-lg text-primary dark:text-inverse-primary tracking-tight" href="/">Feather</a>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors font-label-md text-label-md" href="/">Home</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-semibold border-b-2 border-secondary dark:border-secondary-fixed-dim pb-1 font-label-md text-label-md" href="/explore">Explore</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors font-label-md text-label-md" href="/write">Write</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hidden md:block hover:bg-surface-container-high dark:hover:bg-inverse-surface rounded-lg transition-all duration-200 p-2" data-icon="search">search</span>
+<button class="font-label-md text-label-md text-secondary border border-secondary px-4 py-2 rounded-lg hover:bg-secondary/10 transition-colors">Login</button>
+<button class="font-label-md text-label-md bg-secondary text-on-primary px-4 py-2 rounded-lg hover:bg-secondary/90 transition-colors hidden md:block">Register</button>
+</div>
+</div>
+</header>
+<main class="pt-16 pb-24">
+<!-- Hero Section -->
+<article class="w-full">
+<header class="max-w-container-max mx-auto px-4 md:px-6 mt-12 mb-12 text-center">
+<div class="mb-6 flex justify-center gap-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider">Design</span>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider">Minimalism</span>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6 max-w-4xl mx-auto" id="article-title">The Art of Editorial Minimalism in Digital Spaces</h1>
+<div class="flex items-center justify-center gap-4 mt-8">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="A portrait of a thoughtful writer with glasses, softly lit in a modern minimal studio, wearing dark clothing. High quality, editorial photography style, muted tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe_O2sW5L72_JAu_GD6xpUxosSl-lKYYHQo6pyPgjLWSHgoTy4G2Rvu5IDImkBHXdKwae_1xXF7xPZT2WVslxFfEs-QfbTLsi5UgwWxS_6sWQJByrcGLGYtfsj0kJvd2fRjPAuhip6wbajo5zeWI9Iy44eag2wtxzhukUsIt2xKT3m09WUgYujZ9l5ju4zkyAJyCOA-r3JuzxfgNscIuWeo54KeS93XpeJbuTlQQtR6eIsuYdsBXAU"/>
+<div class="text-left">
+<p class="font-label-md text-label-md text-primary">By <span class="font-semibold" id="author-name">Eleanor Vance</span></p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-0.5">Oct 12, 2024 · 6 min read</p>
+</div>
+</div>
+</header>
+<div class="w-full h-[409px] md:h-[614px] max-w-container-max mx-auto mb-16 rounded-xl overflow-hidden shadow-sm relative">
+<div class="bg-cover bg-center w-full h-full" data-alt="A stunning, wide-angle shot of a minimalist workspace. A sleek wooden desk with a single notebook, an artisan coffee cup, and a high-end keyboard. Natural light streams in from a large window, casting soft shadows. The overall mood is calm, focused, and sophisticated. Brand colors of soft whites and deep greens are subtly present." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-70PSVs9N2eB6DUSTma58fRcHa2YlkKXFpdrWOcGfgve72A6_75_MUZ3eV-HhYfPkRz3uxzZdswupFc7wx2rSimb2dEv-lgJditY_mB1la_xUaC9efwxarAvM7Is--1ZCK-IM1a_9mybKkEklvEkoCFoNHcN4KYoPHzAva-cjCRhg5lDJJikPMHdfZR27PWJarfPKZOmdK2XZsi7Z2mBfZbaRwmPFloHFn9IWdm3diJZp6YZlmxRU')"></div>
+</div>
+<!-- Article Body -->
+<div class="max-w-article-max mx-auto px-4 md:px-0 font-body-lg text-body-lg text-on-surface prose" id="article-content">
+<p class="text-xl text-on-surface-variant mb-8 font-medium leading-relaxed">In an era defined by endless notifications and visual clutter, designing for focus has become an act of rebellion. Editorial minimalism isn't just about white space; it's about respecting the reader's attention.</p>
+<p>When we approach digital typography, we often forget its roots in print. The margins, the leading, the carefully considered pairing of a sturdy serif with a functional sans-serif—these are tools honed over centuries to make reading not just possible, but pleasurable.</p>
+<h2>The Grid and The Breath</h2>
+<p>Whitespace is often misunderstood as 'empty space'. In reality, it is the active structural element that gives content its shape. Consider a generous layout where paragraphs are allowed to breathe.</p>
+<blockquote>
+                    "Design must reflect the practical and aesthetic in business but above all... good design must primarily serve people." – Thomas J. Watson
+                </blockquote>
+<p>To implement this in modern CSS, we might use something like this:</p>
+<code>
+.container {<br/>
+  max-width: 720px;<br/>
+  margin: 0 auto;<br/>
+  padding: 2rem;<br/>
+  line-height: 1.7;<br/>
+}
+                </code>
+<p>Notice the restraint. The focus remains entirely on the text, ensuring the character count per line (CPL) stays within the optimal range of 65-75 characters.</p>
+<img alt="Typography Detail" data-alt="A close-up macro shot of crisp black typographic text printed on high-quality, textured off-white paper. The lighting highlights the subtle indentations of the letterpress printing technique. Very minimal, monochromatic, elegant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArHqj17cIl1NvMU1hq_nYwT3dWq5LrsvKDontGgCWAfnDU8wKwFrnTE7AAjJAxFcDO8bLqHyNk8Y9FN08tPBfsEOmdYD5M-vXIUzXONdUFpsmIiwKEgNIxqWCyoSxaVDjzrhCPrgNeVVqBo-eIrYa6RibbDe2ZDDon7NpWsiepg_lfHoA9hVK0S5V5NNKfmNJCoXfmskQuW-FSFdwIjsHkea2wEQWRXclnL5z7YJkmlpRL92HdZGqw"/>
+<h3>Concluding Thoughts</h3>
+<p>Ultimately, a successful reading experience in a digital product should feel weightless. It should invite the user in and get out of their way, allowing the words themselves to carry the visual weight.</p>
+</div>
+<!-- Tags & Actions -->
+<div class="max-w-article-max mx-auto px-4 md:px-0 mt-12 pt-8 border-t border-outline-variant/30 flex justify-between items-center">
+<div class="flex gap-2">
+<span class="bg-surface-container text-on-surface-variant px-3 py-1 rounded-full font-label-sm text-label-sm">Typography</span>
+<span class="bg-surface-container text-on-surface-variant px-3 py-1 rounded-full font-label-sm text-label-sm">UX Design</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors" id="like-btn">
+<span class="material-symbols-outlined heart-icon" data-icon="favorite">favorite</span>
+<span class="font-label-md text-label-md">248</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+</div>
+</article>
+<!-- More from Author -->
+<section class="max-w-article-max mx-auto px-4 md:px-0 mt-24">
+<div class="bg-surface-container-lowest border border-outline-variant/30 p-8 rounded-xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
+<img class="w-20 h-20 rounded-full object-cover" data-alt="A portrait of a thoughtful writer with glasses, softly lit in a modern minimal studio, wearing dark clothing. High quality, editorial photography style, muted tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHWcgK1X5IX88OSpGrE91fMzQ6XRYpkyS-jkpgOWS8AWQqf7FMHgrZs_tAD5fpjWq8cXLzplOB14fWBHg3p6hL6PDm5dcO1Hr2VEu-rKSi57v0VEGtJ-IUQACB4HvUWoLm2IFTWWh6xsm4awS9fGy6ceBWXd6JgRZJu1H8yjerI7ax6u37iNw2JXGx2jtSbiwtryp94vtyvMl7DATGznNLrtMVWnDjCz1Ct0GITo4p0_nOKTJ1B9so"/>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Written by Eleanor Vance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Senior Designer and typography enthusiast. Exploring the intersection of traditional print media and modern web experiences.</p>
+<button class="font-label-md text-label-md text-secondary border border-secondary px-4 py-2 rounded-lg hover:bg-secondary/10 transition-colors">Follow</button>
+</div>
+</div>
+</section>
+<!-- Related Posts Bento Grid -->
+<section class="max-w-container-max mx-auto px-4 md:px-6 mt-32">
+<h2 class="font-headline-md text-headline-md text-primary mb-10 text-center">Further Reading</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<a class="group block bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/20 overflow-hidden hover:border-secondary/30 transition-colors duration-300" href="#">
+<div class="h-48 overflow-hidden">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="Abstract minimal composition featuring soft shadows and geometric shapes in shades of pale green and off-white. Clean, architectural feel." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCskN0eiMhyncNo-PwkjGdov57Q0HxbGVK-_c_gozleF6ou3g1VSRL1rAhugcZUF11QHFJG9kOd67R93mT0Zyq06XogyVu_yQcxvX4B3oEAc3zoaZvSEhsUypObCf6I3XMYK1aRoaViEGR9j7YIS2AM6w-WfBs6VEg_6ZAAcT09e4P_UGchBmre8eNi9j6c4iqJSTvYXdcxGn0sIUU1cXFxoD-N3Uvyw-V4RKw7od_DxD1fFd2Tafd2')"></div>
+</div>
+<div class="p-6">
+<span class="text-secondary font-label-sm text-label-sm uppercase tracking-wider block mb-2">Design Systems</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-secondary transition-colors">Structuring Tokens for Scale</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">How to build a color and typography token system that grows with your product.</p>
+</div>
+</a>
+<!-- Card 2 -->
+<a class="group block bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/20 overflow-hidden hover:border-secondary/30 transition-colors duration-300" href="#">
+<div class="h-48 overflow-hidden">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A beautifully bound hardcover book lying open on a clean wooden table. Sunlight catches the texture of the paper. Focus on the binding and pages." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9pw6c-9mGDjp_KYdbMIT6bKTvxZDuTeoaIbOG_rZnKJm6ICmhqopWg8xnCdlvRpl2-lv8o6cag2EPfeAW-W2LN4GoP7tmOeGJ_nDN9fzd5YRX7UGRECMjdpKU3zcjobzOUCeIMedd77phpkYG7092UXpRFinO-0y-P2coXPIdWtZur9zAwDbtXo0uzZK9GRoWwV_MlI9UUEUp0vFLpFjApJ2hN6B6tZJaaVQ7VzoMZ0kT5cTzlX9q')"></div>
+</div>
+<div class="p-6">
+<span class="text-secondary font-label-sm text-label-sm uppercase tracking-wider block mb-2">Typography</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-secondary transition-colors">The Perfect Serif Pairings</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Exploring classic typefaces that bring an editorial feel to digital screens.</p>
+</div>
+</a>
+<!-- Card 3 -->
+<a class="group block bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/20 overflow-hidden hover:border-secondary/30 transition-colors duration-300" href="#">
+<div class="h-48 overflow-hidden">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist mobile app interface displayed on a sleek phone lying on a stone surface. Soft natural lighting, subtle shadows, clean UI design visible." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAn_sSf_hlUPDBOrVnPTZaOThz8e6mP8rHrvNtKf4OdCQOX0C2sf8xdqpD3EUWCOxaA7vv80u8o-UQFaWJSRB0UJcnWTFQalhvoVMkF988I7EEF3AaNWppzaZLxC-ywoXEc4-bgyDs6sDCPvHSIMn8vwVFaz9o23OxH5hH_S4wgBPr1UrNePUPHjxgIw8oovWBRSQhOtPVfYRuHFiCeaYJZKk7jWFoVNrr7JZzsMeV0XWCt5RTRKWBj')"></div>
+</div>
+<div class="p-6">
+<span class="text-secondary font-label-sm text-label-sm uppercase tracking-wider block mb-2">UX/UI</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 group-hover:text-secondary transition-colors">Micro-interactions in Reading Apps</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Subtle animations that enhance focus without distracting the reader.</p>
+</div>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-highest w-full py-16 border-t border-outline-variant/50">
+<div class="max-w-container-max mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<span class="font-display-lg text-headline-sm text-primary dark:text-inverse-primary mb-4 block">Feather</span>
+<p class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md max-w-sm">A platform for thoughtful writing and reading, designed with editorial minimalism in mind.</p>
+<p class="mt-8 font-label-sm text-label-sm text-on-surface-variant">© 2024 Feather. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap gap-6 md:justify-end content-start">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors font-body-md text-body-md hover:underline decoration-secondary/30 underline-offset-4" href="#">About</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors font-body-md text-body-md hover:underline decoration-secondary/30 underline-offset-4" href="#">Privacy</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors font-body-md text-body-md hover:underline decoration-secondary/30 underline-offset-4" href="#">Terms</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors font-body-md text-body-md hover:underline decoration-secondary/30 underline-offset-4" href="#">Contact</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors font-body-md text-body-md hover:underline decoration-secondary/30 underline-offset-4" href="#">Archive</a>
+</div>
+</div>
+</footer>
+<script>
+        // Reading Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        });
+
+        // Like Button Micro-interaction
+        const likeBtn = document.getElementById('like-btn');
+        const heartIcon = likeBtn.querySelector('.heart-icon');
+        let isLiked = false;
+
+        likeBtn.addEventListener('click', () => {
+            isLiked = !isLiked;
+            if (isLiked) {
+                heartIcon.classList.add('liked');
+                // Simulate counter increment (optional visual feedback)
+                const countSpan = likeBtn.querySelector('span:last-child');
+                countSpan.textContent = parseInt(countSpan.textContent) + 1;
+            } else {
+                heartIcon.classList.remove('liked');
+                const countSpan = likeBtn.querySelector('span:last-child');
+                countSpan.textContent = parseInt(countSpan.textContent) - 1;
+            }
+        });
+
+        // Placeholder for API Fetch logic (would normally populate the article content)
+        // fetch('http://localhost:8080/api/blogs/{id}')
+        //    .then(response => response.json())
+        //    .then(data => { /* Update DOM with data */ })
+        //    .catch(error => console.error('Error fetching blog:', error));
+    </script>
+</body></html>

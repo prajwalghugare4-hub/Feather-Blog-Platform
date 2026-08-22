@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Feather - Write freely. Read deeply.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed": "#c0edd0",
+                      "on-background": "#1a1c1a",
+                      "secondary-fixed-dim": "#95d4b3",
+                      "background": "#faf9f6",
+                      "on-tertiary-fixed-variant": "#264f39",
+                      "primary-fixed": "#e5e2e1",
+                      "tertiary": "#000000",
+                      "surface-container-highest": "#e3e2df",
+                      "primary-container": "#1c1b1b",
+                      "on-tertiary": "#ffffff",
+                      "primary": "#000000",
+                      "inverse-primary": "#c8c6c5",
+                      "on-error": "#ffffff",
+                      "on-primary-container": "#858383",
+                      "outline-variant": "#c4c7c7",
+                      "surface-bright": "#faf9f6",
+                      "on-surface": "#1a1c1a",
+                      "inverse-on-surface": "#f2f1ee",
+                      "secondary-fixed": "#b1f0ce",
+                      "secondary": "#2c694e",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "surface-variant": "#e3e2df",
+                      "on-primary-fixed-variant": "#474746",
+                      "surface-container": "#efeeeb",
+                      "on-secondary-fixed": "#002114",
+                      "error": "#ba1a1a",
+                      "on-secondary-container": "#316e52",
+                      "on-surface-variant": "#444748",
+                      "secondary-container": "#aeeecb",
+                      "outline": "#747878",
+                      "surface-tint": "#5f5e5e",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed-dim": "#a4d1b4",
+                      "tertiary-container": "#002112",
+                      "on-secondary-fixed-variant": "#0e5138",
+                      "surface-dim": "#dbdad7",
+                      "surface-container-low": "#f4f3f0",
+                      "on-tertiary-container": "#638d74",
+                      "surface-container-high": "#e9e8e5",
+                      "inverse-surface": "#2f312f",
+                      "surface": "#faf9f6",
+                      "on-error-container": "#93000a",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed": "#002112",
+                      "on-primary-fixed": "#1c1b1b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "article-max": "720px",
+                      "base": "8px",
+                      "container-max": "1120px",
+                      "xl": "80px",
+                      "lg": "48px",
+                      "md": "24px",
+                      "xs": "4px",
+                      "sm": "12px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "headline-sm": [
+                              "Playfair Display"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg-mobile": [
+                              "36px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.7",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .card-hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover-effect:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 8px 30px rgba(26, 26, 26, 0.08);
+        }
+        
+        .img-zoom-wrapper {
+            overflow: hidden;
+        }
+        
+        .img-zoom-effect {
+            transition: transform 0.5s ease;
+        }
+        
+        .card-hover-effect:hover .img-zoom-effect {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-container-low/90 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline/20 transition-all duration-300" id="navbar">
+<div class="flex justify-between items-center h-16 px-6 md:px-12 max-w-container-max mx-auto">
+<a class="font-display-lg text-display-lg text-primary dark:text-inverse-primary tracking-tight" href="/" style="font-size: 1.5rem;">Feather</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim font-semibold border-b-2 border-secondary dark:border-secondary-fixed-dim pb-1 active:scale-95 transition-transform duration-150" href="/">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors hover:bg-surface-container-high dark:hover:bg-inverse-surface rounded-lg px-2 py-1 transition-all duration-200" href="/explore">Explore</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors hover:bg-surface-container-high dark:hover:bg-inverse-surface rounded-lg px-2 py-1 transition-all duration-200" href="/write">Write</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex relative items-center">
+<span class="material-symbols-outlined absolute right-3 text-outline" style="font-size: 20px;">search</span>
+<input class="bg-surface-container-low border border-outline-variant rounded-full py-1.5 pl-4 pr-10 text-sm focus:outline-none focus:border-secondary transition-colors w-48 font-body-md" placeholder="Search..." type="text"/>
+</div>
+<button class="font-label-md text-label-md text-secondary border border-secondary rounded-lg px-4 py-2 hover:bg-surface-container-low transition-colors">Login</button>
+<button class="font-label-md text-label-md bg-secondary text-on-secondary rounded-lg px-4 py-2 hover:bg-secondary/90 transition-colors">Register</button>
+</div>
+</div>
+</nav>
+<main class="flex-grow pt-24 pb-xl">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-6 md:px-12 pt-xl pb-lg flex flex-col items-center text-center relative">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6 max-w-3xl">Write freely. Read deeply.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-10">Join a sophisticated community of thinkers and creators. Discover long-form essays, insightful articles, and compelling stories.</p>
+<div class="w-full max-w-2xl relative flex items-center md:hidden mb-8">
+<span class="material-symbols-outlined absolute left-4 text-outline">search</span>
+<input class="w-full bg-surface-container-highest border border-outline-variant rounded-xl py-4 pl-12 pr-4 text-base focus:outline-none focus:border-secondary transition-colors font-body-md shadow-sm" placeholder="Search topics, authors, or articles..." type="text"/>
+</div>
+</section>
+<!-- Trending Section -->
+<section class="max-w-container-max mx-auto px-6 md:px-12 mb-lg">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-secondary">trending_up</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Trending this week</h2>
+</div>
+<div class="flex gap-6 overflow-x-auto pb-4 no-scrollbar">
+<!-- Trending Card 1 -->
+<article class="flex-none w-72 bg-surface-container-lowest rounded-xl p-4 shadow-[0px_4px_20px_rgba(26,26,26,0.05)] card-hover-effect cursor-pointer">
+<div class="flex items-center gap-3 mb-3">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A minimal portrait of a distinguished author with glasses, natural soft lighting, neutral background, cinematic photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOPOMgtt78iWuEpbZ9-RBFzE1NeQjV-U5tIkfck8G5F6lMl007TR7DNtgUyuvf8IX_SIPbsCSQLes5fbbQBSx2HPYo93YKbd7SpZJYsI__NL1UL2OR_YkXc1b46R7IiyMuliPXvpptFeUKhHanznip49MvOElfKrrVv5MXPZvubiQIN-ctuBE_1EPBpWj-h2XfljknzmBktpImidSdOgC-fq6WOZV_ByATFddDT6cZ0Lz710OpjadR"/>
+<span class="font-label-md text-label-md text-on-surface-variant">Eleanor Vance</span>
+</div>
+<h3 class="font-headline-sm text-[18px] leading-tight text-primary mb-2">The Architecture of Silence</h3>
+<p class="font-label-sm text-label-sm text-outline">Oct 12 • 8 min read</p>
+</article>
+<!-- Trending Card 2 -->
+<article class="flex-none w-72 bg-surface-container-lowest rounded-xl p-4 shadow-[0px_4px_20px_rgba(26,26,26,0.05)] card-hover-effect cursor-pointer">
+<div class="flex items-center gap-3 mb-3">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A close up of a modern digital artist working, soft warm studio lighting, creative atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDso-FfH4hNEYS6ERVrYNxCLpQMm_WKp0UxqX36otJo8Zn7qLAsCXeemig1dHCGKS0lfQ7Wn42umBzGvNdauyXWkW39lTaYLDV2PJDUv_OrhaEGoq0RsZg3pe7oKLFkQTVLA2B7aw1RJUzsxxCFYqGSlUZOUg0f_DLtNVT2dgRS7vjIq86cWI934Y7mbBk57pj_2JWPy6shOvLMGWlPXkKliSg60DxmMF5T_bhOPne6rlvzop4YIuFJ"/>
+<span class="font-label-md text-label-md text-on-surface-variant">Marcus Thorne</span>
+</div>
+<h3 class="font-headline-sm text-[18px] leading-tight text-primary mb-2">Minimalism in the Digital Age</h3>
+<p class="font-label-sm text-label-sm text-outline">Oct 10 • 5 min read</p>
+</article>
+<!-- Trending Card 3 -->
+<article class="flex-none w-72 bg-surface-container-lowest rounded-xl p-4 shadow-[0px_4px_20px_rgba(26,26,26,0.05)] card-hover-effect cursor-pointer">
+<div class="flex items-center gap-3 mb-3">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A profile picture of a financial analyst, sharp professional attire, bright airy office background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYMX8ihJwtnE144_WCkSwZO7eP0gZY5YN5jhTb8EGIBW1WF_oDfipfk-DsNYv23BV53AeIgZ4YXtXGY3Ql8Syv19o1c_H3kuMk6PdzuUizzyJkjaLE2BflrMz26Lt9_Z_LGXxx32_fO-3XjSQgZk-14cXSoXzS-yy3ZsGnApubHo4p4I1TCfE03GOodllxA63UG3LE8LmVWArNDhWrxUW69TbF_61N8uUYSMeOTTNc6STD0trrk1bY"/>
+<span class="font-label-md text-label-md text-on-surface-variant">Sarah Jenkins</span>
+</div>
+<h3 class="font-headline-sm text-[18px] leading-tight text-primary mb-2">Rethinking Modern Economics</h3>
+<p class="font-label-sm text-label-sm text-outline">Oct 09 • 12 min read</p>
+</article>
+<!-- Trending Card 4 -->
+<article class="flex-none w-72 bg-surface-container-lowest rounded-xl p-4 shadow-[0px_4px_20px_rgba(26,26,26,0.05)] card-hover-effect cursor-pointer">
+<div class="flex items-center gap-3 mb-3">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A serene photo of a traveler looking at a map, warm sunset lighting, blurred natural background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlBGASHfyrggDQmhHHPJQumxRgdRiQnSpo5ZpIatVKHtg7ZndRP9eQ9t28IXDcbR3a-wFp91ur8kBMvjLs2ZMgVX7WguMNpLTeAi-r4S9fpSzcI3sy_ANMhyk-gAIzKDRIM7ArwpSlxzNQu-nBv9d_zO_cVSPf_Rtkm8vr0t03-roFhElaiu1uX0UigTv2n4GMSyrFrl7l_eJv18OH7Dtr_SBMKN_IObqbXzdgGE_V066jyz0K9sDA"/>
+<span class="font-label-md text-label-md text-on-surface-variant">David Chen</span>
+</div>
+<h3 class="font-headline-sm text-[18px] leading-tight text-primary mb-2">Journeys Without Destinations</h3>
+<p class="font-label-sm text-label-sm text-outline">Oct 08 • 6 min read</p>
+</article>
+</div>
+</section>
+<!-- Categories & Main Grid -->
+<section class="max-w-container-max mx-auto px-6 md:px-12">
+<!-- Filter Tabs -->
+<div class="flex gap-4 overflow-x-auto pb-4 mb-8 border-b border-outline-variant/30 no-scrollbar">
+<button class="font-label-md text-label-md pb-2 border-b-2 border-secondary text-primary whitespace-nowrap">All</button>
+<button class="font-label-md text-label-md pb-2 text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Technology</button>
+<button class="font-label-md text-label-md pb-2 text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Lifestyle</button>
+<button class="font-label-md text-label-md pb-2 text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Travel</button>
+<button class="font-label-md text-label-md pb-2 text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Finance</button>
+<button class="font-label-md text-label-md pb-2 text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Health</button>
+</div>
+<!-- Blog Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-grid">
+<!-- Blog Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(26,26,26,0.05)] card-hover-effect cursor-pointer flex flex-col h-full">
+<div class="h-48 img-zoom-wrapper relative">
+<img class="w-full h-full object-cover img-zoom-effect" data-alt="A beautifully designed modern workspace with a sleek laptop, soft morning light streaming through a window, minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_SSJDfQHRcVEHFZpKClNGMNnvd3dbUYMqyKOY2sSOBjTBf-lm1FKdMbBuclRdRpy4Q-vM2VzeIlNZ9iTaA9aEJvW00nOIldrdFbMdoCyrvwWCBujPjOClERgMePBjLRXYVO5HdOT-wfcRDGvfOjUQkUqMLgeGxW6JM1S86Dsilpc-ncpja5CoHxxuPK78aNSoFjqECDpPvtGbneZzJADevfErNhammTlNJT00pOlHTZZjUoa5ag6V"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="mb-3">
+<span class="inline-block bg-[#B7E4C7] text-secondary font-label-sm text-label-sm px-3 py-1 rounded-full">Technology</span>
+</div>
+<h2 class="font-headline-md text-headline-sm text-primary mb-3 line-clamp-2">The Future of Asynchronous Work</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3 flex-grow">Exploring how distributed teams are moving beyond rigid schedules to embrace true flexibility in the modern digital workplace.</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A portrait of a tech writer, modern and clean style, neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqnzjTZ2iTewQ7nyHlTOhBlMpSMw_L9UUVxfzbVvbe4Zjok55oAKbFmLJHiDm7ez1tvOvwDKOw90TYEdeQVdKxMQAGldVuRuWoLma60OjysTy1xjIp04NssZufk4aFo8ob30R_hmpnNbKC1QBcakM3gF1ZozZ6_EnhaLIOWnO_BEmvECqFiE-z5oinUEiC0RvRpL-9ATJ8_DhT7xacB4_InTa7cO3I2-TlCFeQoxW9psfDLkFLWIDs"/>
+<span class="font-label-md text-label-md text-on-surface">Alex Mercer</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Oct 14 • 10 min read</span>
+</div>
+</div>
+</article>
+<!-- Blog Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(26,26,26,0.05)] card-hover-effect cursor-pointer flex flex-col h-full">
+<div class="h-48 img-zoom-wrapper relative">
+<img class="w-full h-full object-cover img-zoom-effect" data-alt="A serene, minimalist living room with natural wood tones, lots of green plants, soft diffused sunlight, elegant design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABXPtkE5gLizBS3hlUDKnwk_qo8vdOl1PmLag5zgIe1Cb7f-BRdrZUplhsp-NbscpfJTC2vMy_J7mVCkb8ko-JSCbtJMtpfVmOjwrER0evNSMfJlPh93Jln9M06P_YWDq0RDf4ipishRFaBfmJk9TUsayO43WGKmspyBEjV2TGs6g_wLPuR0NWrBbCtBjR1365qpvgmj5LndumQPdxvsuohXw51j2LcCViJUNfUBD2YvDhZLhmsV8C"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="mb-3">
+<span class="inline-block bg-[#B7E4C7] text-secondary font-label-sm text-label-sm px-3 py-1 rounded-full">Lifestyle</span>
+</div>
+<h2 class="font-headline-md text-headline-sm text-primary mb-3 line-clamp-2">Cultivating Intentional Spaces</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3 flex-grow">Why the physical environment we curate around us directly impacts our mental clarity and creative output.</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A portrait of a lifestyle blogger, soft warm tones, smiling gently." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlUYTyfszf4SaQ2EeN6Tm4Vd27vqXAeg1rtSOOuHsfOM60ViOMl70IWQ0uj0vPe_iJ9xu2IwMws-srz1n-msTs2Tft2wSupbZibTaKE_mrcMP-Y351CfsixPfze4-hGqtfO8wrQ7dNfKOM1lvMj0u2zNjhCYUMhDWd_3oQF-kXiZtQrNO5189MxGuElk7iiFmC7wkTytutlWS97EN6ufbtXngGBeinCKC6m8idkzEUB2MxKD8jEw6Z"/>
+<span class="font-label-md text-label-md text-on-surface">Chloe Davis</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Oct 13 • 7 min read</span>
+</div>
+</div>
+</article>
+<!-- Blog Card 3 -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(26,26,26,0.05)] card-hover-effect cursor-pointer flex flex-col h-full">
+<div class="h-48 img-zoom-wrapper relative">
+<img class="w-full h-full object-cover img-zoom-effect" data-alt="A breathtaking view of a misty mountain range at dawn, cool blue and green tones, cinematic landscape photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl2TZsjTY5PncF9IDcQuafymPZd2WFsiRSJK3zh-SJcGNnL22bsDFLNJ3RQt3hIqInUFssOI-yneHFeFX-iH-J7fxvGi0qznYq2sxis3p6J499HOUh-ZdqCeuOHc6Dws6STLaN8sZjBgw9FXP9pmo1my_wT6mP9eFP7BClH10Vpbfko7zyAi64ZQ0KIJDkQ_Gg1MIeXtDvt2liniM3ezUJhEe6FUL04x8Tcacf5-GEACyQjurrjDFN"/>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="mb-3">
+<span class="inline-block bg-[#B7E4C7] text-secondary font-label-sm text-label-sm px-3 py-1 rounded-full">Travel</span>
+</div>
+<h2 class="font-headline-md text-headline-sm text-primary mb-3 line-clamp-2">Slow Travel in the Alps</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-3 flex-grow">A diary of walking through ancient paths, focusing on presence rather than destinations in the heart of Europe.</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A portrait of an outdoor photographer wearing a beanie, natural light, outdoorsy vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEUHWJfSRG119IwhEUPhltLV_1Nb84NahCQOF4_XuhbHc4Os-l7MrrTfnJavUYdpr1bANNCj-HhX-7x3ZQ5D57AdhPWJwNkht45UwVKDAWXrU3WhW5pcI39L0ntsFlTdyaMLMVsfOpL2UaZ5NokBp0gKTCUK0yUtNHqbuePXK9yHNLPrarRlyL0xjVJFSGM4v98OqckICjf7SneSNYtUyJXK5EWLK57b-UAxyI28kToyoLDccqCsVq"/>
+<span class="font-label-md text-label-md text-on-surface">Sam Ridge</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Oct 11 • 15 min read</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-highest w-full py-16 border-t border-outline-variant/50">
+<div class="max-w-container-max mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<a class="font-display-lg text-headline-sm text-primary dark:text-inverse-primary block mb-6" href="/">Feather</a>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm mb-6">A minimalist platform designed for focused writing and thoughtful reading.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 Feather. All rights reserved.</p>
+</div>
+<div class="flex flex-col md:items-end">
+<nav class="flex flex-col space-y-4">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors hover:underline decoration-secondary/30 underline-offset-4 transition-all duration-300 ease-in-out" href="/about">About</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors hover:underline decoration-secondary/30 underline-offset-4 transition-all duration-300 ease-in-out" href="/privacy">Privacy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors hover:underline decoration-secondary/30 underline-offset-4 transition-all duration-300 ease-in-out" href="/terms">Terms</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors hover:underline decoration-secondary/30 underline-offset-4 transition-all duration-300 ease-in-out" href="/contact">Contact</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors hover:underline decoration-secondary/30 underline-offset-4 transition-all duration-300 ease-in-out" href="/archive">Archive</a>
+</nav>
+</div>
+</div>
+</footer>
+<script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-sm');
+                nav.classList.replace('border-outline-variant/30', 'border-outline-variant/50');
+            } else {
+                nav.classList.remove('shadow-sm');
+                nav.classList.replace('border-outline-variant/50', 'border-outline-variant/30');
+            }
+        });
+
+        // Mock API Fetch (Demonstration purposes)
+        async function fetchBlogs() {
+            try {
+                // In a real scenario, uncomment the fetch call.
+                // const response = await fetch('http://localhost:8080/api/blogs');
+                // const data = await response.json();
+                console.log("Mock API fetch triggered for http://localhost:8080/api/blogs");
+                // Logic to populate #blog-grid goes here
+            } catch (error) {
+                console.error("Error fetching blogs:", error);
+            }
+        }
+        
+        // fetchBlogs();
+    </script>
+</body></html>
